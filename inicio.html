@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<meta charset="utf-8">
+	<title>Servicio Automotriz J&R C.A</title>
+	<meta name="descrition" content="Pagina dedicada a la Evaluacion Sumativa I"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+	  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed:ital,wght@1,300&family=Roboto+Mono:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="Imagenes/icono.png">
+
+</head>
+
+
+
+<body>
+
+
+  <div class="esqueleto"> 
+
+     <div class="Derecha">
+
+
+        <form method="post" action="#" class="formulario"  id="formulario"> <br>
+            
+
+            <img class="logo" src="Imagenes/Servicio Automotriz.png" style="width: 100px;">
+
+
+       <h2 style="text-align: center;"> FACTURACIÓN </h2> <br><br>
+       <h3 style="text-align: center;">Servcio Automotriz J&amp;R C.A</h3>
+       <p style="text-align: center;">Le damos el cariño que se merece tu a vehículo</p> <br><br>
+
+        <div class="contenido">
+
+
+      <div class="form__group field">
+      <label class="form__label" for="Nombre">Nombre o Razon Social</label>
+      <input type="text" class="form__field" name="Nombre" id="Nombre"> <br> <br>
+      
+
+      <label class="form__label" for="Cedula">Cedula</label>
+      <input type="text" class="form__field" name="Cedula" id="Cedula"> <br> <br>
+
+      <label class="form__label" for="Direccion">Direccion</label>
+      <input type="text" class="form__field" name="Direccion" id="Direccion"> <br> <br>
+
+        </div>
+           
+            <div class="select">
+
+            <h4>Tipo de Servicio</h4><br>  
+
+             <select name="Servicio" class="Seleccione" id="Servicio">
+
+                  <option value="" disabled selected>Seleccione un Servicio</option>
+                  <option value="Limpieza de Inyectores">Limpieza de Inyectores</option>
+                  <option value="Cambio de Aceite">Cambio de Aceite</option>
+                  <option value="Escaner">Escaner</option>
+     
+             </select> 
+
+               </div>
+
+      <br><br>
+
+      <div class="cantidad">
+
+      <label class="form__label" for="Cantidad">Cantidad</label>
+      <input type="number" class="form__field" name="Cantidad" id="Cantidad"> <br> <br>
+
+      <label class="form__label" for="Precio">Precio</label>
+      <input type="text" class="form__field" name="Precio" id="Precio">$ <br> <br>
+
+      </div> <br>
+
+      <button type="button" id="adicionar" class="boton">Procesar Servicio</button> <br> <br>
+
+            <h4>Tipo de Compra</h4><br>  
+
+             <select name="elSelect" class="Seleccione" id="elSelect">
+
+                  <option value="0" disabled selected>Seleccione una Compra</option>
+                  <option value="Aceite1">Aceite 5w-20</option>
+                  <option value="Aceite2">Aceite 5w-30</option>
+                  <option value="Aceite3">Aceite 15w-40</option>
+                  <option value="Liga1">Liga de Freno Doc 3</option>
+                  <option value="Liga2">Liga de Freno Doc 2</option>
+                  <option value="Liga3">Liga de Freno Doc 3</option>
+     
+             </select> 
+
+
+
+             <img id="laImagen" width="100" src="" />
+
+               
+
+      <br><br>
+
+      <div class="cantidad">
+
+      <label class="form__label" for="Cantidad1">Cantidad</label>
+      <input type="number" class="form__field" name="Cantidad1" id="Cantidad1"> <br> <br>
+
+      </div> <br>
+
+      <button type="button" id="adicionar1" class="boton">Procesar Compra</button> <br> <br>
+             </div>
+      
+
+
+      <br><br><br><br>
+
+          
+         
+
+</form></div>
+  
+<div class="Izquierda">
+
+                <h2 style="text-align: center;"> SU PEDIDO </h2> <br><br>
+
+                <p>Cantidad de Servicios Facturados: <strong id="adicionados"></strong></p> <br>
+
+                <table class="styled-table">
+                  <thead>
+                    <tr>
+                      <th>Productos</th>
+                      <th>Cantidad</th>
+                      <th>Precio</th>
+                      <th>Eliminar</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="mytable">
+                    <tr style="display: none;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr style="display: ;">
+                      <th></th>
+                      <th>Sub Total $</th>
+                      <th><input class="tabla-input" type="text" readonly="" id="resultado_subtotal"></th>
+                      <th></th>
+                    </tr>
+
+                    <tr style="display: ;">
+                      <th></th>
+                      <th>IVA $</th>
+                      <th><input class="tabla-input" type="text" readonly="" id="resultado_iva"></th>
+                      <th></th>
+                    </tr>
+
+                    <tr style="display: ;">
+                      <th></th>
+                      <th>Total $</th>
+                      <th><input class="tabla-input" type="text" readonly="" id="resultado_total"></th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
+                </table>
+          
+                <br><br><br>
+
+          <div class="cj_btn">
+
+            <input type="submit" name="Vaciar" value="Vaciar" class="boton" onclick="location.reload()" style="display: inline-block; background: #e96443;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             ;">
+           
+            <input type="submit" name="Calcular" value="Facturar" class="boton" onclick="facturar()" style="display: inline-block;">
+
+
+          </div>
+
+          </div>
+
+
+        </div>
+
+         
+
+
+         
+
+
+
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+ 
+
+<!-- ///////////////////////////////////////// SERVICIOS /////////////////////////////////// -->
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+
+$('#adicionar').click(function() {
+  var Servicio = document.getElementById("Servicio").value;
+  var Cantidad = document.getElementById("Cantidad").value;
+  var Precio = document.getElementById("Precio").value;
+  var i = 1;
+  var sub = Cantidad * Precio;
+  var fila = '<tr id="row' + i + '"><td>' + Servicio + '</td><td>' + Cantidad + '</td><td class="subtotal">' + sub + '$</td><td><button type="button" name="remove" id="' + i + '" class="Quitar btn_remove" ><span class="icon-bin2" style="cursor: pointer;"> </span>Quitar</button></td></tr>'; //esto seria lo que contendria la fila
+
+  i++;
+
+  $('#mytable tr:first').after(fila);
+    $("#adicionados").text(""); 
+    var nFilas = $("#mytable tr").length;
+    $("#adicionados").append(nFilas - 1);
+
+    document.getElementById("Cantidad").value ="";
+    document.getElementById("Precio").value = "";
+    document.getElementById("Servicio").value = "";
+    document.getElementById("Servicio").focus();
+
+    
+
+
+    var sum=0;
+    $('.subtotal').each(function() {  
+      sum += parseFloat($(this).text().replace(/,/g, ''), 10);  
+      }); 
+    
+    $('#resultado_subtotal').val(sum.toFixed(2));
+
+    var iva = sum * 0.12;
+
+    $('#resultado_iva').val(iva.toFixed(2));
+
+    var total = sum + iva;
+
+    $('#resultado_total').val(total.toFixed(2));
+
+
+
+  });
+
+
+
+
+  
+  
+
+
+  $(document).on('click', '.btn_remove', function() { // funcion para borrar, btn_remove, es la clase ya que saldran nuevos botones y deben tener la misma, con id daria error
+
+
+  var button_id = $(this).attr("id"); //aqui asigno variables del id de cada nuevo producto
+
+
+  const resultado = confirm('¿Estas seguro de que deseas eliminar este articulo?');
+
+   if (resultado) {
+    
+    //cuando da click obtenemos el id del boton
+    $('#row' + button_id + '').remove(); //borra la fila
+    //limpia el para que vuelva a contar las filas de la tabla
+    $("#adicionados").text("");
+    var nFilas = $("#mytable tr").length;
+    $("#adicionados").append(nFilas - 1);
+
+     var sum=0;
+    $('.subtotal').each(function() {  
+      sum += parseFloat($(this).text().replace(/,/g, ''), 10);  
+      }); 
+    
+    $('#resultado_subtotal').val(sum.toFixed(2));
+
+    var iva = sum * 0.12;
+
+    $('#resultado_iva').val(iva.toFixed(2));
+
+    var total = sum + iva;
+
+    $('#resultado_total').val(total.toFixed(2));
+
+
+    alert('Articulo Eliminado Correctamente.'); //dentro de los corchetes del if puedo meter tantas variables, formulas y lo que se me ocurra siempre y cuando se cumpla la condicion, entonces meti la funcion de eliminar dentro de esta condicion en caso de cumplirse, el deber ser es que el alert vaya despues del procedimiento o de la funcion. asi en caso de que haya un error en el codigo de arriba, la alerta no saldra y dara error.
+
+
+
+     return;
+    
+    } else { 
+    
+    alert('Pareces indeciso');
+
+}
+
+    
+  });
+
+
+
+});
+</script>
+
+
+
+
+<!-- ///////////////////////////////////////// COMPRA /////////////////////////////////// -->
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+
+$('#adicionar1').click(function() {
+  var Compra = document.getElementById("elSelect").value;
+  var Cantidad1 = document.getElementById("Cantidad1").value;
+  var Precio1 = 20;
+  var i = 1;
+  var sub = Cantidad1 * Precio1;
+  var fila = '<tr id="row' + i + '"><td>' + Compra + '</td><td>' + Cantidad1 + '</td><td class="subtotal">' + sub + '$</td><td><button type="button" name="remove1" id="' + i + '" class="Quitar btn_remove1" ><span class="icon-bin2" style="cursor: pointer;"> </span>Quitar</button></td></tr>'; //esto seria lo que contendria la fila
+
+  i++;
+
+  $('#mytable tr:first').after(fila);
+    $("#adicionados").text(""); 
+    var nFilas = $("#mytable tr").length;
+    $("#adicionados").append(nFilas - 1);
+
+    document.getElementById("Cantidad1").value ="";
+    
+    document.getElementById("elSelect").value = "";
+    document.getElementById("elSelect").focus();
+
+    
+
+
+    var sum=0;
+    $('.subtotal').each(function() {  
+      sum += parseFloat($(this).text().replace(/,/g, ''), 10);  
+      }); 
+    
+    $('#resultado_subtotal').val(sum.toFixed(2));
+
+    var iva = sum * 0.12;
+
+    $('#resultado_iva').val(iva.toFixed(2));
+
+    var total = sum + iva;
+
+    $('#resultado_total').val(total.toFixed(2));
+
+
+
+  });
+
+
+
+
+  
+  
+
+
+  $(document).on('click', '.btn_remove1', function() { // funcion para borrar, btn_remove, es la clase ya que saldran nuevos botones y deben tener la misma, con id daria error
+
+
+  var button_id = $(this).attr("id"); //aqui asigno variables del id de cada nuevo producto
+
+
+  const resultado = confirm('¿Estas seguro de que deseas eliminar este articulo?');
+
+   if (resultado) {
+    
+    //cuando da click obtenemos el id del boton
+    $('#row' + button_id + '').remove(); //borra la fila
+    //limpia el para que vuelva a contar las filas de la tabla
+    $("#adicionados").text("");
+    var nFilas = $("#mytable tr").length;
+    $("#adicionados").append(nFilas - 1);
+
+     var sum=0;
+    $('.subtotal').each(function() {  
+      sum += parseFloat($(this).text().replace(/,/g, ''), 10);  
+      }); 
+    
+    $('#resultado_subtotal').val(sum.toFixed(2));
+
+    var iva = sum * 0.12;
+
+    $('#resultado_iva').val(iva.toFixed(2));
+
+    var total = sum + iva;
+
+    $('#resultado_total').val(total.toFixed(2));
+
+
+    alert('Articulo Eliminado Correctamente.'); //dentro de los corchetes del if puedo meter tantas variables, formulas y lo que se me ocurra siempre y cuando se cumpla la condicion, entonces meti la funcion de eliminar dentro de esta condicion en caso de cumplirse, el deber ser es que el alert vaya despues del procedimiento o de la funcion. asi en caso de que haya un error en el codigo de arriba, la alerta no saldra y dara error.
+
+
+
+     return;
+    
+    } else { 
+    
+    alert('Pareces indeciso');
+
+}
+
+    
+  });
+
+
+
+});
+</script>
+
+
+
+
+
+<script type="text/javascript">
+//Segun el select la imagen
+
+  $(document).ready(function() {
+    elSelect.addEventListener("change",()=>{
+  laImagen.setAttribute("src","Imagenes/" + elSelect.selectedOptions[0].value + ".jpg")
+});
+  });
+</script>
+
+
+
+<script type="text/javascript">
+  
+ function facturar(){
+
+
+
+  var Nombre = document.getElementById('Nombre').value;
+  var Cedula = document.getElementById('Cedula').value;
+  var Direccion = document.getElementById('Direccion').value;
+
+  var factura = Math.floor(1e6 + (Math.random() * 9e6));
+
+  if (Nombre=== "") {
+
+    alert("El campo Nombre esta vacio")
+    return false;
+  }
+
+  else if (Cedula=== "") {
+     
+     alert("El campo Cedula esta vacio")
+    return false;
+
+  }
+
+  else if (Direccion=== "") {
+
+    alert("El campo Direccion esta vacio")
+  }
+
+/*------------------------------------------------------------------------------*/
+
+if (Nombre.length >30) {
+
+  alert("EL nombre no puede ser tan largo")
+    return false;
+
+}
+/*------------------------------------------------------------------------------*/
+
+if(isNaN(Cedula)){
+
+  alert("La Cedula debe ser un numero")
+    return false;
+}
+
+
+
+/*------------------------------------------------------------------------------*/
+
+  else{
+
+
+  alert("Factura Creada Correctamente \nFactura Nro: "+ factura +"\nCliente: "+ Nombre +"\nCedula Nro: "+ Cedula +"\nDireccion: "+ Direccion);
+
+
+  location.reload();
+  
+
+  }
+
+
+ }
+
+</script>
+
+</body>
+
+
+
+</html>
